@@ -1,35 +1,33 @@
-"use client"
-import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight, CheckCircle, Zap, Shield, Users, ChevronDown } from 'lucide-react';
+"use client";
+import Hero from "@/components/Hero";
+import Navbar from "@/components/Navbar";
+import {
+  ArrowRight,
+  CheckCircle,
+  Zap,
+  Shield,
+  Users,
+  ChevronDown,
+} from "lucide-react";
 
 export default function ReliAssistLanding() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const features = [
     {
       icon: <Zap className="w-8 h-8" />,
       title: "Lightning Fast",
-      description: "Get instant responses and solutions powered by advanced AI technology"
+      description:
+        "Get instant responses and solutions powered by advanced AI technology",
     },
     {
       icon: <Shield className="w-8 h-8" />,
       title: "Secure & Reliable",
-      description: "Enterprise-grade security with 99.9% uptime guarantee"
+      description: "Enterprise-grade security with 99.9% uptime guarantee",
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: "24/7 Support",
-      description: "Round-the-clock assistance whenever you need it"
-    }
+      description: "Round-the-clock assistance whenever you need it",
+    },
   ];
 
   const benefits = [
@@ -38,117 +36,14 @@ export default function ReliAssistLanding() {
     "Scale support effortlessly",
     "Improve customer satisfaction",
     "Integrate with existing tools",
-    "Get actionable insights"
+    "Get actionable insights",
   ];
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
-      }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-              ReliAssist
-            </div>
+      <Navbar />
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#features" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
-                Features
-              </a>
-              <a href="#pricing" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
-                Pricing
-              </a>
-              <a href="#about" className="text-gray-700 hover:text-purple-600 transition-colors font-medium">
-                About
-              </a>
-              <button className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-2.5 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
-                Get Started
-              </button>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button 
-              className="md:hidden"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-white border-t">
-            <div className="px-4 pt-2 pb-4 space-y-3">
-              <a href="#features" className="block py-2 text-gray-700 hover:text-purple-600">
-                Features
-              </a>
-              <a href="#pricing" className="block py-2 text-gray-700 hover:text-purple-600">
-                Pricing
-              </a>
-              <a href="#about" className="block py-2 text-gray-700 hover:text-purple-600">
-                About
-              </a>
-              <button className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-2.5 rounded-full font-semibold">
-                Get Started
-              </button>
-            </div>
-          </div>
-        )}
-      </nav>
-
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-purple-50 via-white to-indigo-50">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-        
-        <div className="max-w-7xl mx-auto relative">
-          <div className="text-center">
-            <div className="inline-block mb-4">
-              <span className="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold">
-                ✨ AI-Powered Assistance
-              </span>
-            </div>
-            
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-              Reliable AI Assistant
-              <br />
-              <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
-                For Your Business
-              </span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto">
-              Transform your customer support and operations with intelligent automation that learns and adapts to your needs
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="group bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center">
-                Start Free Trial
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-              </button>
-              <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-full font-semibold text-lg hover:border-purple-600 hover:text-purple-600 transition-all duration-300">
-                Watch Demo
-              </button>
-            </div>
-
-            <div className="mt-16 flex items-center justify-center gap-8 text-sm text-gray-600">
-              <div className="flex items-center gap-2">
-                <CheckCircle className="text-green-500" size={20} />
-                <span>No credit card required</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle className="text-green-500" size={20} />
-                <span>14-day free trial</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <ChevronDown className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-purple-600" size={32} />
-      </section>
+      <Hero />
 
       {/* Features Section */}
       <section id="features" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
@@ -164,7 +59,7 @@ export default function ReliAssistLanding() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <div 
+              <div
                 key={index}
                 className="group p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-indigo-50 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-purple-100"
               >
@@ -192,13 +87,17 @@ export default function ReliAssistLanding() {
                 Boost Your Productivity
               </h2>
               <p className="text-xl text-purple-100 mb-8">
-                See the impact of AI-powered assistance on your business operations
+                See the impact of AI-powered assistance on your business
+                operations
               </p>
-              
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {benefits.map((benefit, index) => (
                   <div key={index} className="flex items-start gap-3">
-                    <CheckCircle className="text-green-400 flex-shrink-0 mt-1" size={20} />
+                    <CheckCircle
+                      className="text-green-400 flex-shrink-0 mt-1"
+                      size={20}
+                    />
                     <span className="text-purple-50">{benefit}</span>
                   </div>
                 ))}
@@ -214,7 +113,9 @@ export default function ReliAssistLanding() {
                 <div className="h-full flex items-center justify-center text-center">
                   <div>
                     <div className="text-6xl font-bold mb-4">80%</div>
-                    <div className="text-xl text-purple-100">Faster Response Time</div>
+                    <div className="text-xl text-purple-100">
+                      Faster Response Time
+                    </div>
                   </div>
                 </div>
               </div>
@@ -257,9 +158,15 @@ export default function ReliAssistLanding() {
             © 2024 ReliAssist. All rights reserved.
           </p>
           <div className="flex justify-center gap-6">
-            <a href="#" className="hover:text-purple-400 transition-colors">Privacy</a>
-            <a href="#" className="hover:text-purple-400 transition-colors">Terms</a>
-            <a href="#" className="hover:text-purple-400 transition-colors">Contact</a>
+            <a href="#" className="hover:text-purple-400 transition-colors">
+              Privacy
+            </a>
+            <a href="#" className="hover:text-purple-400 transition-colors">
+              Terms
+            </a>
+            <a href="#" className="hover:text-purple-400 transition-colors">
+              Contact
+            </a>
           </div>
         </div>
       </footer>
