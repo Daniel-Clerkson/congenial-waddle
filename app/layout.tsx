@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Raleway } from "next/font/google";
 import "./globals.css";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import PromotionBanner from "@/components/PromotionBanner";
 
-const space = Space_Grotesk({
+const space = Raleway({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
@@ -17,9 +20,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const bannerData = {
+    message: "Subscribe to any plan, pay for 2 months and get 1 month free.",
+    ctaText: "Hire Now",
+    ctaLink: "https://zfrmz.com/igfe5iy9VPWbgkjIaJ5P",
+  };
   return (
     <html lang="en">
-      <body className={` ${space.variable} antialiased`}>{children}</body>
+      <body className={` ${space.variable} antialiased`}>
+        <PromotionBanner
+          message={bannerData.message}
+          ctaText={bannerData.ctaText}
+          ctaLink={bannerData.ctaLink}
+        />
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

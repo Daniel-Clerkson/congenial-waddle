@@ -1,1 +1,42 @@
 @import "tailwindcss";
+
+:root {
+  --secondary: #4a4a4a;
+  --primary: #6a0dad;
+}
+
+* {
+  font-family: var(--font-geist-mono);
+}
+
+button, a {
+  cursor: pointer;
+}
+
+@utility text-primary {
+  color: var(--primary);
+}
+@utility text-secondary {
+  color: var(--secondary);
+}
+@utility bg-primary {
+  background: var(--primary);
+}
+@utility bg-secondary {
+  background: var(--secondary);
+}
+@utility border-primary {
+  border: 1px solid var(--primary);
+}
+
+@utility border-secondary {
+  border: 1px solid var(--secondary);
+}
+
+@utility shad{
+  box-shadow: 0px 0px 24px 0px #FFFFFF66;
+}
+
+@utility time{
+  background: linear-gradient(62.99deg, #EEF1F0 7.18%, #71757E 83.56%);
+}

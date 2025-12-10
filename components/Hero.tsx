@@ -1,88 +1,71 @@
-import { ArrowRight, CheckCircle, ChevronDown } from "lucide-react";
-import Image from "next/image";
 import React from "react";
+import new_hero from "@/public/new_hero.png";
+import Ichota from "@/public/Ichota.png";
+import Micro from "@/public/Micro.png";
+import BeyondTheory from "@/public/BeyondTheory.png";
+import Image from "next/image";
 
-const Hero = () => {
+const Hero: React.FC = () => {
   return (
-    <>
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-purple-50 via-white to-indigo-50">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+    <div className="flex flex-col items-center justify-center w-full px-4  md:px-[140px]  flex-grow">
+      <div className="flex flex-col items-center w-full">
+        <p className="text-center text-[10px] md:text-[14px] font-san font-normal py-2 px-5 bg-[#F9EDFE] rounded-[50px] md:py-3 md:px-4">
+          Increasing your productivity at your convenience!
+        </p>
 
-        <div className="main flex flex-wrap justify-between md:mx-20">
-          <div className="md:w-1/2 w-full relative">
-            <div className="">
-              <h1 className="text-5xl md:text-7xl font-bold text-purple-800 mb-6 leading-tight">
-                Your Business,
-                <br />
-                <span className="font-sans bg-clip-text bg-gradient-to-r from-purple-700 to-fuchsia-500 font-[400] text-transparent">
-                  Simplified.
-                </span>
-              </h1>
+        <h1 className="text-center font-bold text-[40px] leading-[45px] md:text-[60px] md:leading-[69px] font-san mt-8">
+          Matched with
+          <span className="ml-4 text-transparent bg-clip-text bg-gradient-to-r from-[rgba(106,13,173,1)] to-[rgba(245,91,195,1)]">
+            VA and Onboarding
+          </span>
+          <br className="block" />
+          Delivered in 12 Hours
+        </h1>
 
-              <p className="text-xl md:text-xl   text-gray-600 mb-10 max-w-3xl mx-auto">
-                ReliAssist is your go-to partner for dependable, expert virtual
-                assistant services, designed to streamline your daily operations
-                so you can focus on growth.
-              </p>
+        <p className="text-center font-normal w-full mt-8 font-san text-[16px] leading-[30px] md:text-[20px] md:w-[95%]">
+          Increase productivity, lower stress, and focus on what truly matters.
+          Let us handle the rest.
+        </p>
 
-              <button className="group bg-[#6A0DAD] text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center">
-                Discover Our Services
-                <ArrowRight
-                  className="ml-2 group-hover:translate-x-1 transition-transform"
-                  size={20}
-                />
-              </button>
+        <a
+          href="https://zfrmz.com/igfe5iy9VPWbgkjIaJ5P"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button className="py-2 px-6 md:py-3 md:px-12 text-white text-[16px] bg-primary hover:bg-black hover:outline-black font-bold font-san outline outline-1 outline-primary rounded-[50px] mt-8 transition-colors">
+            Hire A Virtual Assistant
+          </button>
+        </a>
 
-              <div className="mt-16 flex items-center justify-center gap-8 text-sm text-gray-600">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="text-green-500" size={20} />
-                  <span>No credit card required</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="text-green-500" size={20} />
-                  <span>14-day free trial</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="img w-full md:w-1/2">
-            <Image
-              src="/hero.png"
-              alt="hero"
-              width={1080}
-              height={1080}
-              className="w-full"
-            />
-          </div>
-        </div>
-
-        <ChevronDown
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-purple-600"
-          size={32}
-        />
-      </section>
-      <section className="section-2 flex  items-center gap-10 justify-center flex-wrap p-5 my-20">
-        <div className="image w-full md:w-[30%]">
         <Image
-              src="/banner.png"
-              alt="hero"
-              width={1080}
-              height={1080}
-              className="w-full"
-            />
+          src={new_hero}
+          alt="Illustration showing virtual assistant working with tools"
+          className="mt-10 w-full max-w-[1096px] cursor-pointer"
+        />
+
+        <p className="text-center font-normal w-full md:w-[95%] mt-16 md:mt-8 font-san text-[16px] leading-[30px] md:text-[20px]">
+          Trusted By
+        </p>
+
+        <div className="flex justify-center items-center gap-4 md:gap-10 mt-4 md:mt-0">
+          <Image
+            src={Ichota}
+            alt="Ichota Logo"
+            className="w-[80px] md:w-auto md:max-w-full h-auto"
+          />
+          <Image
+            src={Micro}
+            alt="Micro Logo"
+            className="w-[80px] md:w-auto md:max-w-full h-auto"
+          />
+          <Image
+            src={BeyondTheory}
+            alt="Beyond Theory Logo"
+            className="w-[80px] md:w-auto md:max-w-full h-auto"
+          />
         </div>
-        <div className="text w-full md:w-1/2 p-10">
-            <div className="head">
-                <h1 className="text-2xl m-2 font-semibold">A Reliable Partner For Your Business <br />
-                Success <div className="border border-purple-700 inline-block w-3/4 mb-1"></div>
-                </h1>
-                <p>
-                We understand that running a business comes with countless responsibilities, many of which pull you away from your core goals. That’s where ReliAssist comes in. We specialise in providing skilled virtual assistants ready to take on the tasks that keep your business moving, freeing you to focus on what you do best. Whether you need ongoing support or help with a specific project, we’ve got you covered.
-                </p>
-            </div>
-        </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 };
 

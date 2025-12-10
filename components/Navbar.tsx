@@ -1,98 +1,123 @@
-import { Menu, X } from "lucide-react";
+"use client";
+
+import React, { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
-import Logo from "@/public/logo.png"
+import { Menu, X } from "lucide-react";
+import Reliassist_new from "@/public/logo.png";
 
-const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+interface NavLink {
+  name: string;
+  href: string;
+}
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+const NAV_LINKS: NavLink[] = [
+  { name: "About Us", href: "/about" },
+  { name: "Services", href: "/service" },
+  { name: "Pricing", href: "/pricing" },
+  { name: "Contact us", href: "/contact" },
+];
+
+const Navbar: React.FC = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
   return (
-    <>
-      <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          scrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-transparent"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-           <Image
-           src={Logo}
-           alt="logo"
-           />
+    // Outer container
+    <nav className="top-0 w-full sticky z-50 px-4 py-6 md:px-[60px] lg:px-[100px] md:py-8">
+      
+      {/* Main Bar: Now uses md:p-4 for better tablet spacing */}
+      <div className="flex justify-between items-center bg-[#F9FAFB] rounded-[50px] px-6 py-3 md:p-4 shadow-sm border border-gray-100">
+        
+        {/* Logo Section */}
+        <Link href="/" className="z-50 w-[100px] flex-shrink-0">
+          <Image
+            src={Reliassist_new}
+            alt="Reliassist Logo"
+            width={100}
+            height={40}
+            className="cursor-pointer"
+            priority
+          />
+        </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <a
-                href="#features"
-                className="text-gray-700 hover:text-[#6A0DAD] transition-colors font-medium"
+        {/* Desktop Navigation (Now hidden until LG breakpoint) */}
+        <div className="hidden lg:flex items-center gap-10">
+          <div className="flex gap-8">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-[16px] font-Rale hover:text-primary transition-colors cursor-pointer font-semibold"
               >
-                About
-              </a>
-              <a
-                href="#pricing"
-                className="text-gray-700 hover:text-[#6A0DAD] transition-colors font-medium"
-              >
-                Services
-              </a>
-              <a
-                href="#about"
-                className="text-gray-700 hover:text-[#6A0DAD] transition-colors font-medium"
-              >
-                Contact Us
-              </a>
-              <button className="bg-[#6A0DAD] cursor-pointer text-white px-6 py-2.5 rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300">
-                Request Talent{" "}
-              </button>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
+                {link.name}
+              </Link>
+            ))}
           </div>
+
+          <a href="https://zfrmz.com/igfe5iy9VPWbgkjIaJ5P" target="_blank" rel="noopener noreferrer">
+            <button className="py-3 px-8 font-bold text-white bg-primary hover:bg-black hover:outline-black text-[16px] font-Rale outline outline-1 outline-primary rounded-[50px] transition-all">
+              Request Talent
+            </button>
+          </a>
         </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-white border-t">
-            <div className="px-4 pt-2 pb-4 space-y-3">
-              <a
-                href="#features"
-                className="block py-2 text-gray-700 hover:text-[#6A0DAD]"
+        {/* Mobile/Tablet Toggle Button (Visible up to LG breakpoint) */}
+        <div className="lg:hidden flex items-center z-50">
+          <button
+            onClick={() => setIsOpen((prev) => !prev)}
+            className="text-black focus:outline-none"
+            aria-label={isOpen ? "Close Menu" : "Open Menu"}
+            aria-expanded={isOpen}
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile/Tablet Menu Overlay */}
+      <div
+        className={`
+          absolute left-0 right-0 top-full mt-2 
+          bg-black/95 backdrop-blur-sm rounded-3xl p-8 
+          flex flex-col items-center gap-8 
+          transition-all duration-300 ease-in-out origin-top
+          
+          /* Ensures menu is edge-to-edge on mobile, but constrained on tablets */
+          mx-4 lg:mx-0 
+          
+          ${
+            isOpen
+              ? "opacity-100 scale-y-100 visible"
+              : "opacity-0 scale-y-0 invisible"
+          }
+        `}
+      >
+        <ul className="flex flex-col items-center gap-6 text-white w-full">
+          {NAV_LINKS.map((link) => (
+            <li key={link.name} className="w-full text-center">
+              <Link
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="text-xl font-Rale hover:text-primary block py-2 font-semibold"
               >
-                About
-              </a>
-              <a
-                href="#pricing"
-                className="block py-2 text-gray-700 hover:text-[#6A0DAD]"
-              >
-                Service
-              </a>
-              <a
-                href="#about"
-                className="block py-2 text-gray-700 hover:text-[#6A0DAD]"
-              >
-                Contact Us
-              </a>
-              <button className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-6 py-2.5 rounded-full font-semibold">
-                Request Talent
-              </button>
-            </div>
-          </div>
-        )}
-      </nav>
-    </>
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <a
+          href="https://zfrmz.com/igfe5iy9VPWbgkjIaJ5P"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full"
+        >
+          <button className="w-full py-4 font-bold text-white bg-primary border border-primary rounded-xl transition-all">
+            Request Talent
+          </button>
+        </a>
+      </div>
+    </nav>
   );
 };
 
