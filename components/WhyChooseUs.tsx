@@ -12,7 +12,6 @@ interface FeatureItem {
   description: string;
 }
 
-// Data structure for the features
 const FEATURES: FeatureItem[] = [
   {
     iconSrc: why1,
@@ -37,10 +36,8 @@ const FEATURES: FeatureItem[] = [
   },
 ];
 
-// Define the component using React.FC (Functional Component) for typesafety
 const WhyChooseUs: React.FC = () => {
   return (
-    // Outer container: Adjusted height to be more dynamic and removed fixed margin/padding that was using percentages.
     <div className="flex flex-col md:flex-row items-center min-h-[700px] px-4 md:px-[100px] gap-16 md:gap-[80px] py-16">
       
       {/* LEFT SECTION: Content and Features */}
