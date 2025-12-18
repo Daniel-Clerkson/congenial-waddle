@@ -24,7 +24,7 @@ export default function ReliAssistLanding() {
       {showModal && (
         <PopupModal
           onClose={() => setShowModal(false)}
-          ctaLink="https://zfrmz.com/igfe5iy9VPWbgkjIaJ5P"
+          ctaLink="https://forms.zohopublic.com/reliassist1/form/LetsMergeYouWithThePerfectVAForYou/formperma/zl7SfYPqi2ajNM1jisikGepE6qym_zjwblIx_WvweM0"
         />
       )}
       <Hero />

@@ -9,7 +9,8 @@
   font-family: var(--font-geist-mono);
 }
 
-button, a {
+button,
+a {
   cursor: pointer;
 }
 
@@ -33,10 +34,15 @@ button, a {
   border: 1px solid var(--secondary);
 }
 
-@utility shad{
-  box-shadow: 0px 0px 24px 0px #FFFFFF66;
+@utility shad {
+  box-shadow: 0px 0px 24px 0px #ffffff66;
 }
 
-@utility time{
-  background: linear-gradient(62.99deg, #EEF1F0 7.18%, #71757E 83.56%);
+@utility time {
+  background: linear-gradient(62.99deg, #eef1f0 7.18%, #71757e 83.56%);
+}
+@layer utilities {
+  .text-grad {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-[#6a0dad] to-[#f55bc3];
+  }
 }

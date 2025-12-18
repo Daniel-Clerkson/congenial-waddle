@@ -20,13 +20,13 @@ interface NavLink {
 }
 
 const SERVICE_LINKS: DropdownLink[] = [
-  { name: "Customer Service", href: "/service#customer-service" },
-  { name: "Social Media Management", href: "/service#social-media" },
-  { name: "Technical Support", href: "/service#technical-support" },
-  { name: "Administrative Support", href: "/service#admin-support" },
+  { name: "Customer Service", href: "/services/customer-service" },
+  { name: "Social Media Management", href: "/services/social-media" },
+  { name: "Technical Support", href: "/services/technical-support" },
+  { name: "Administrative Support", href: "/services/admin-support" },
   {
     name: "Specialized Project Assistance",
-    href: "/service#specialized-projects",
+    href: "/services/specialized-projects",
   },
 ];
 
@@ -80,7 +80,6 @@ const Navbar: React.FC = () => {
                 <Link
                   href={link.href}
                   className="text-[16px] font-semibold text-secondary flex items-center gap-1 hover:text-primary transition-colors cursor-pointer"
-                  // Use onClick to handle Services link directly on desktop if no dropdown is needed, but here we keep it as a link to the main service page
                 >
                   {link.name}
                   {link.dropdown && (
