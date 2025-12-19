@@ -31,7 +31,7 @@ const SERVICE_LINKS: DropdownLink[] = [
 ];
 
 const NAV_LINKS: NavLink[] = [
-  { name: "About Us", href: "/" },
+  { name: "About Us", href: "/about" },
   { name: "Services", href: "/services", dropdown: SERVICE_LINKS }, // Added dropdown data here
   { name: "Pricing", href: "/pricing" },
   { name: "Contact us", href: "/contact" },

@@ -1,52 +1,45 @@
 import ReusableHeader from "@/components/ServiceComponents/ReusableHeader";
-import {
-  ClipboardList,
-  FileHeadphone,
-  Headset,
-  MessageCircleMore,
-  MessageSquareQuote,
-  UserRoundSearch,
-} from "lucide-react";
+import { Figma, Monitor, ShoppingBag, UsersRound, Zap } from "lucide-react";
 
 const page = () => {
   const defaultServices = [
     {
-      icon: <Headset className="text-purple-600" />,
-      title: "Customer Inquiries & Help Desk Managment",
+      icon: <Figma className="text-purple-600" />,
+      title: "UI/UX Design",
       description:
-        "Prompt courteous responses to customer questions, ensuring  they feel valued and informed",
+        "Designing intuitive and visually appealing user experiences that drive engagement.",
       borderColor: "border-purple-500 ",
       bgColor: "bg-purple-200",
     },
     {
-      icon: <ClipboardList className="text-purple-600" />,
-      title: "Order Processing & Tracking Assistance",
+      icon: <Monitor className="text-purple-600" />,
+      title: "Web Design",
       description:
-        "Managing orders, tracking updates, and handling order-related questions to enhance customer conveinience",
+        "Building responsive and modern websites tailored to your business needs.",
       borderColor: "border-green-200",
       bgColor: "bg-purple-50",
     },
     {
-      icon: <UserRoundSearch className="text-green-600" />,
-      title: "Complaint Resolution",
+      icon: <ShoppingBag className="text-green-600" />,
+      title: "E-Commerce Sites",
       description:
-        "Handling issues professionally and efficiently to maintain trust and satisfaction.",
+        "Setup and customization of online stores for seamless customer shopping experiences.",
       borderColor: "border-green-200",
       bgColor: "bg-green-50",
     },
     {
-      icon: <MessageSquareQuote className="text-green-600" />,
-      title: "Customer Feedback Collection",
+      icon: <Zap className="text-green-600" />,
+      title: "Site Optimization",
       description:
-        "Gathering feedback to help you continuously improve products and services.",
+        "Improving site performance, speed, and SEO for better visibility and usability.",
       borderColor: "border-green-200",
       bgColor: "bg-green-50",
     },
     {
-      icon: <MessageCircleMore className="text-purple-600" />,
-      title: "Live Chat Support",
+      icon: <UsersRound className="text-purple-600" />,
+      title: "CMS Solutions",
       description:
-        "Real-time support for customers needing quick assistance, reducing wait times and enhancing satisfaction.",
+        "Setup, management, and support for content management systems like WordPress, Shopify, and more.",
       borderColor: "border-purple-200",
       bgColor: "bg-purple-50",
     },
@@ -55,13 +48,13 @@ const page = () => {
     <>
       <ReusableHeader
         heroTitle={{
-          italic: "Customer Support",
-          line2: "That Stregthens",
-          line3: "Loyalty And Trust",
+          italic: "Technical Support",
+          line2: "Dependable for",
+          line3: "Smooth Operations",
         }}
-        heroDescription="Your customers deserve exceptional support. ReliAssist provides dedicated customer service professionals who handle inquiries, resolve issues, and create positive experiences that encourage customer loyalty."
-        servicesTitle={{ normal: "Customer Service", italic: "Support" }}
-        benefitsDescription="With a dedicated ReliAssist customer service representative, you ensure your customers feel heard, valued, and supported, which fosters loyalty and drives repeat business."
+        heroDescription="Technical issues can be disruptive. ReliAssist provides knowledgeable technical support to handle troubleshooting, software assistance, and more, ensuring that your business runs smoothly without interruption."
+        servicesTitle={{ normal: "Technical", italic: "Support" }}
+        benefitsDescription="With ReliAssist’s technical support, your digital infrastructure remains efficient, secure, and scalable helping you focus on growth while we handle the tech."
         services={defaultServices}
       />
     </>

@@ -1,52 +1,53 @@
 import ReusableHeader from "@/components/ServiceComponents/ReusableHeader";
-import {
-  ClipboardList,
-  FileHeadphone,
-  Headset,
-  MessageCircleMore,
-  MessageSquareQuote,
-  UserRoundSearch,
-} from "lucide-react";
+import { BadgeCheck, Camera, Lightbulb, PenTool, Store, TrendingUp } from "lucide-react";
 
 const page = () => {
   const defaultServices = [
     {
-      icon: <Headset className="text-purple-600" />,
-      title: "Customer Inquiries & Help Desk Managment",
+      icon: <TrendingUp className="text-purple-600" />,
+      title: "Graphics & Visuals Creation",
       description:
-        "Prompt courteous responses to customer questions, ensuring  they feel valued and informed",
+        "Eye-catching visuals tailored to reflect your brand’s personality and engage your audience across all platforms.",
       borderColor: "border-purple-500 ",
       bgColor: "bg-purple-200",
     },
     {
-      icon: <ClipboardList className="text-purple-600" />,
-      title: "Order Processing & Tracking Assistance",
+      icon: <Lightbulb className="text-purple-600" />,
+      title: "Banner Design",
       description:
-        "Managing orders, tracking updates, and handling order-related questions to enhance customer conveinience",
+        "Custom designs for display ads, web headers, and promotional content that grab attention.",
       borderColor: "border-green-200",
       bgColor: "bg-purple-50",
     },
     {
-      icon: <UserRoundSearch className="text-green-600" />,
-      title: "Complaint Resolution",
+      icon: <Camera className="text-green-600" />,
+      title: "Social Media Graphics",
       description:
-        "Handling issues professionally and efficiently to maintain trust and satisfaction.",
+        "Branded visuals optimized for Instagram, Facebook, LinkedIn, and more.",
       borderColor: "border-green-200",
       bgColor: "bg-green-50",
     },
     {
-      icon: <MessageSquareQuote className="text-green-600" />,
-      title: "Customer Feedback Collection",
+      icon: <Store className="text-green-600" />,
+      title: "Flyers & Brochures",
       description:
-        "Gathering feedback to help you continuously improve products and services.",
+        "Professionally designed print and digital materials to support your marketing campaigns.",
       borderColor: "border-green-200",
       bgColor: "bg-green-50",
     },
     {
-      icon: <MessageCircleMore className="text-purple-600" />,
-      title: "Live Chat Support",
+      icon: <BadgeCheck className="text-purple-600" />,
+      title: "Logo Creation",
       description:
-        "Real-time support for customers needing quick assistance, reducing wait times and enhancing satisfaction.",
+        "Memorable logos that represent your identity and set you apart.",
+      borderColor: "border-purple-200",
+      bgColor: "bg-purple-50",
+    },
+    {
+      icon: <PenTool className="text-purple-600" />,
+      title: "Visual Branding",
+      description:
+        "Consistent design systems that strengthen your brand’s presence and recognition.",
       borderColor: "border-purple-200",
       bgColor: "bg-purple-50",
     },
@@ -55,13 +56,13 @@ const page = () => {
     <>
       <ReusableHeader
         heroTitle={{
-          italic: "Customer Support",
-          line2: "That Stregthens",
-          line3: "Loyalty And Trust",
+          italic: "Creative Designs",
+          line2: "That Elevates",
+          line3: "Your Brand",
         }}
-        heroDescription="Your customers deserve exceptional support. ReliAssist provides dedicated customer service professionals who handle inquiries, resolve issues, and create positive experiences that encourage customer loyalty."
-        servicesTitle={{ normal: "Customer Service", italic: "Support" }}
-        benefitsDescription="With a dedicated ReliAssist customer service representative, you ensure your customers feel heard, valued, and supported, which fosters loyalty and drives repeat business."
+        heroDescription="First impressions matter. ReliAssist delivers innovative and visually striking design solutions from branding to marketing materials—helping your business stand out, connect with your audience, and leave a lasting impact."
+        servicesTitle={{ normal: "Creative", italic: "Design" }}
+        benefitsDescription="With ReliAssist’s creative design support, your brand always looks its best—professional, cohesive, and ready to stand out in any crowd."
         services={defaultServices}
       />
     </>
