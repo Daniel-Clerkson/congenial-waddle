@@ -46,7 +46,7 @@ function Contact() {
           <div className="space-y-6">
             <div>
               <h3 className="text-sm font-semibold mb-2 text-purple-300">Phone Contact</h3>
-              <p className="text-lg">+234 000 000 00</p>
+              <p className="text-lg"> +447435382372</p>
             </div>
 
             <div>
@@ -56,7 +56,7 @@ function Contact() {
 
             <div>
               <h3 className="text-sm font-semibold mb-2 text-purple-300">Address</h3>
-              <p className="text-lg">Remote</p>
+              <p className="text-lg">Remote, UK</p>
             </div>
           </div>
         </div>
