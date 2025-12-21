@@ -1,0 +1,6 @@
+# Don't apply any attributes by default
+* -text
+
+# Only process TypeScript files as text
+*.ts text eol=lf
+*.tsx text eol=lf
