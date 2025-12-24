@@ -164,7 +164,7 @@ const Slider: React.FC = () => {
       <div className="sticky top-0 flex items-center h-screen overflow-hidden">
         <motion.div style={{ x }} className="flex gap-6 p-4 md:p-10">
           {cardData.map((card) => {
-            return <a href="/services"><Card card={card} key={card.id} /></a>;
+            return <a  key={card.id} href="/services"><Card card={card} key={card.id} /></a>;
           })}
         </motion.div>
       </div>

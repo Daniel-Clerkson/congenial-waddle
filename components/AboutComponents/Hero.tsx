@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
         {/* Heading - Fluid text sizes and line heights */}
         <h1 className="text-center font-bold text-[32px] leading-[40px] sm:text-[48px] sm:leading-[56px] md:text-[60px] md:leading-[69px] font-san mt-6 md:mt-8 max-w-[900px]">
           Your Productivity
-          <span className="block sm:inline-block sm:ml-4 text-transparent bg-clip-text bg-gradient-to-r from-[#6A0DAD] to-[#F55BC3]">
+          <span className="block sm:inline-block sm:ml-4 text-grad">
             SuperCharged
           </span>
         </h1>

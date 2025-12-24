@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import useCountdownTimer from "@/hooks/useCountdownTimer";
 import { X } from "lucide-react";
 import popup from "@/public/popup.png";
@@ -10,7 +10,6 @@ interface LimitedOfferModalProps {
 }
 
 const PopupModal: React.FC<LimitedOfferModalProps> = ({ onClose, ctaLink }) => {
-  // Keeping this at 6000 seconds (100 minutes) as per your provided code
   const DURATION_SECONDS = 60; 
 
   const [timerExpired, setTimerExpired] = useState(false);
@@ -22,13 +21,20 @@ const PopupModal: React.FC<LimitedOfferModalProps> = ({ onClose, ctaLink }) => {
     }
   );
 
+  useEffect(() => {
+    if (timerExpired) {
+      const timeout = setTimeout(() => {
+        onClose();
+      }, 2000);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [timerExpired, onClose]);
+
   const buttonText = timerExpired ? "Offer Expired" : "Hire Now!";
 
   return (
-    // Backdrop
-    <div className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center p-4">
-      
-      {/* Modal Content Container: Responsive layout and font-serif applied */}
+    <div className="fixed inset-0 bg-opacity-20 backdrop-blur-sm z-50 flex items-center justify-center p-4">
       <div
         className={`
           bg-[#4A0070] text-white rounded-xl shadow-2xl relative transform transition-all duration-300 
@@ -36,7 +42,6 @@ const PopupModal: React.FC<LimitedOfferModalProps> = ({ onClose, ctaLink }) => {
           flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16
         `}
       >
-        {/* Close Button: Absolute positioned */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors z-10"
@@ -45,7 +50,6 @@ const PopupModal: React.FC<LimitedOfferModalProps> = ({ onClose, ctaLink }) => {
           <X size={24} />
         </button>
 
-        {/* LEFT SECTION: Offer Details */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left md:w-1/2">
           <div className="popup-image mb-4">
             <Image
@@ -57,7 +61,6 @@ const PopupModal: React.FC<LimitedOfferModalProps> = ({ onClose, ctaLink }) => {
             />
           </div>
 
-          {/* Main Promotion Message */}
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-6">
             Subscribe to any <br className="hidden sm:block" /> plan{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[rgba(106,13,173,1)] to-[rgba(245,91,195,1)]">
@@ -69,7 +72,6 @@ const PopupModal: React.FC<LimitedOfferModalProps> = ({ onClose, ctaLink }) => {
             </span>
           </h2>
 
-          {/* CTA Button */}
           <a
             href={ctaLink}
             target="_blank"
@@ -91,15 +93,11 @@ const PopupModal: React.FC<LimitedOfferModalProps> = ({ onClose, ctaLink }) => {
           </a>
         </div>
 
-        {/* RIGHT SECTION: Timer (Restored to original requested look + responsiveness) */}
         <div
           className={`
-            text-center w-full md:w-1/2 md:max-w-xs // Responsive width
+            text-center w-full md:w-1/2 md:max-w-xs
             font-extrabold py-10 rounded-3xl border border-[#71757E] shadow-lg flex-shrink-0 transition-colors
-            
-            // Responsive font size for timer numbers
             text-5xl sm:text-6xl md:text-7xl lg:text-8xl 
-            
             ${
               isTimerActive
                 ? "text-transparent bg-clip-text bg-gradient-to-r from-[#EEF1F0] to-[#71757E]"

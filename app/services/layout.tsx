@@ -8,12 +8,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning>
-        {children}
-        <Testimonial />
-        <FooterBanner />
-      </body>
-    </html>
+    <>
+      {children}
+      <Testimonial />
+      <FooterBanner />
+    </>
   );
 }

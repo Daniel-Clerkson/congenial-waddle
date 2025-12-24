@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
 
         <h1 className="text-center font-bold text-[40px] leading-[45px] md:text-[60px] md:leading-[69px] font-san mt-8">
           Matched with
-          <span className="ml-4 text-transparent bg-clip-text bg-gradient-to-r from-[rgba(106,13,173,1)] to-[rgba(245,91,195,1)]">
+          <span className="ml-4 text-grad">
             VA and Onboarding
           </span>
           <br className="block" />
