@@ -25,7 +25,7 @@ export default function RootLayout({
   const bannerData = {
     message: "Subscribe to any plan, pay for 2 months and get 1 month free.",
     ctaText: "Hire Now",
-    ctaLink: "https://forms.zohopublic.com/...",
+    ctaLink: "https://forms.zohopublic.com/reliassist1/form/LetsMergeYouWithThePerfectVAForYou/formperma/zl7SfYPqi2ajNM1jisikGepE6qym_zjwblIx_WvweM0",
   };
 
   return (

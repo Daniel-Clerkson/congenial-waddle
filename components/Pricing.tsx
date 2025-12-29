@@ -1,5 +1,6 @@
 import React from "react";
 import { Check } from "lucide-react";
+import Link from "next/link";
 
 function PricingPlans() {
   const plans = [
@@ -175,7 +176,10 @@ function PricingPlans() {
                     : "bg-purple-600 text-white hover:bg-purple-700"
                 }`}
               >
+                <Link href={"https://forms.zohopublic.com/reliassist1/form/ClientForm/formperma/3wbMalM4JoZcfxKrcAYc2CMX2RBSNtKQww1ONV_GeRQ"}>
+                
                 Subscribe Now
+                </Link>
               </button>
             </div>
           ))}
