@@ -39,6 +39,27 @@ const TESTIMONIALS: TestimonialData[] = [
     title: "CEO & Founder",
     bgColor: "bg-[#330C49]",
   },
+  {
+    description: `The service has been good so far and looking forward to more collaborative engagements.`,
+    company: "Cevis Technologies",
+    clientName: "Adeyini Babajide",
+    title: "Lead Consultant",
+    bgColor: "bg-[#330C49]",
+  },
+  {
+    description: `Great selection of VPA and the VA has been a great support for us.`,
+    company: "Bana Daff",
+    clientName: "Allin Tech",
+    title: "CEO & Founder",
+    bgColor: "bg-[#330C49]",
+  },
+  {
+    description: `I love your VA selection and the assigned VA was highly satisfactory, creative and made suggestions to improve our social media.`,
+    company: "Toluwa Oyeleye",
+    clientName: "Zoah Consultancy",
+    title: "Founder",
+    bgColor: "bg-[#330C49]",
+  },
 ];
 
 // --- 3. MAIN COMPONENT ---

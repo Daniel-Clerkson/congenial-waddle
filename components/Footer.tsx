@@ -88,11 +88,12 @@ const Footer: React.FC = () => {
                             Services
                         </h3>
                         <ul className="space-y-3 font-normal text-[16px] text-white text-sm">
-                            <li><p className={gradientHoverClass}>Customer Service</p></li>
-                            <li><p className={gradientHoverClass}>Social Media Management</p></li>
-                            <li><p className={gradientHoverClass}>Technical Support</p></li>
-                            <li><p className={gradientHoverClass}>Administrative Support</p></li>
-                            <li><p className={gradientHoverClass}>Specialized Project Assistance</p></li>
+                            <Link href={"/services/customer-service"}><li><p className={`${gradientHoverClass} mb-2`}>Customer Service</p></li></Link>
+                            <Link href={"/services/social-media"}><li><p className={`${gradientHoverClass} mb-2`}>Social Media Management</p></li></Link>
+                            <Link href={"/services/technical-support"}><li><p className={`${gradientHoverClass} mb-2`}>Technical Support</p></li></Link>
+                            <Link href={"/services/admin-support"}><li><p className={`${gradientHoverClass} mb-2`}>Administrative Support</p></li></Link>
+                            <Link href={"/services/creative-design"}><li><p className={`${gradientHoverClass} mb-2`}>Creative Design</p></li></Link>
+                            <Link href={"/services/specialized-projects"}><li><p className={`${gradientHoverClass} mb-2`}>Specialized Project Assistance</p></li></Link>
                         </ul>
                     </div>
 
